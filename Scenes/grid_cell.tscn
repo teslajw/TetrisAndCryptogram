@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://rfq8g55ru3bf"]
+
+[ext_resource type="Script" path="res://Scenes/grid_cell.gd" id="1_m7lej"]
+[ext_resource type="Script" path="res://Scenes/CollisionShape2D.gd" id="2_q12ot"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xaedb"]
+size = Vector2(48, 48)
+
+[node name="Grid_cell" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_m7lej")
+
+[node name="Encrypted_label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 20.0
+
+[node name="LineEdit" type="LineEdit" parent="."]
+custom_minimum_size = Vector2(1, 1)
+offset_right = 47.375
+offset_bottom = 28.0
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xaedb")
+script = ExtResource("2_q12ot")
+
+[node name="Decrypted_label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0, 0.670588, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.670588, 0, 1)
+
+[connection signal="renamed" from="CollisionShape2D" to="CollisionShape2D" method="_on_renamed"]

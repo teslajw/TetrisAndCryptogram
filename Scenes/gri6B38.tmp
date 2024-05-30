@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://rfq8g55ru3bf"]
+
+[ext_resource type="Script" path="res://Scenes/grid_cell.gd" id="1_m7lej"]
+
+[node name="Grid_cell" type="Node2D"]
+script = ExtResource("1_m7lej")
+text = null
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 20.0
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_right = 47.375
+offset_bottom = 28.0
